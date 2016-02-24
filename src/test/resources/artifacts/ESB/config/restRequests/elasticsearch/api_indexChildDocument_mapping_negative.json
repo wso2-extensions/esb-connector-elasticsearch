@@ -1,0 +1,7 @@
+{
+  "%s(indexChildDocumentTypeMand)": {
+    "_parent": {
+      "type": "%s(type)"
+    }
+  }
+}
