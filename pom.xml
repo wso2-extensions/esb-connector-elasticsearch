@@ -134,7 +134,8 @@
         </dependency>
     </dependencies>
     <scm>
-        <connection>scm:git:https://github.com/wso2-extensions/esb-connector-elasticsearch.git
+        <connection>
+            scm:git:https://github.com/wso2-extensions/esb-connector-elasticsearch.git
         </connection>
         <url>https://github.com/wso2-extensions/esb-connector-elasticsearch.git</url>
         <developerConnection>
