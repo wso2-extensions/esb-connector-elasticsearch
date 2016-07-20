@@ -1,4 +1,1 @@
-{
-  "value1": "%s(bulkOperationValue1)",
-  "value2": "%s(bulkOperationValue2)"
-}
+{"value1": "%s(bulkOperationValue1)", "value2": "%s(bulkOperationValue2)"}

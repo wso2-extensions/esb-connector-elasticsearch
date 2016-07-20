@@ -9,12 +9,7 @@
   "human": "true",
   "settings": {
     "index": {
-      "mapping.allow_type_wrapper":
-      %
-      s
-      (
-      indexMappingAllowType
-      )
+      "mapping.allow_type_wrapper":%s(indexMappingAllowType)
     }
   }
 }
