@@ -1,0 +1,52 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "indexName": {
+      "id": "http:\/\/wso2jsonschema.org\/indexName",
+      "type": "string"
+    },
+    "type": {
+      "id": "http:\/\/wso2jsonschema.org\/type",
+      "type": "string"
+    },
+    "user": {
+      "id": "http:\/\/wso2jsonschema.org\/user",
+      "type": "string"
+    },
+    "postDate": {
+      "id": "http:\/\/wso2jsonschema.org\/postDate",
+      "type": "string"
+    },
+    "message": {
+      "id": "http:\/\/wso2jsonschema.org\/message",
+      "type": "string"
+    },
+    "routingName": {
+      "id": "http:\/\/wso2jsonschema.org\/routingName",
+      "type": "string"
+    },
+    "timeStamp": {
+      "id": "http:\/\/wso2jsonschema.org\/timeStamp",
+      "type": "string"
+    },
+    "timeToLive": {
+      "id": "http:\/\/wso2jsonschema.org\/timeToLive",
+      "type": "string"
+    },
+    "consistency": {
+      "id": "http:\/\/wso2jsonschema.org\/consistency",
+      "type": "string"
+    },
+    "timeout": {
+      "id": "http:\/\/wso2jsonschema.org\/timeout",
+      "type": "string"
+    },
+    "refresh": {
+      "id": "http:\/\/wso2jsonschema.org\/refresh",
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

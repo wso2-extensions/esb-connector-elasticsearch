@@ -1,0 +1,94 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "docs": {
+      "id": "http:\/\/wso2jsonschema.org\/docs",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/docs\/0",
+          "type": "object",
+          "properties": {
+            "_index": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_index",
+              "type": "string"
+            },
+            "_type": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_type",
+              "type": "string"
+            },
+            "_id": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_id",
+              "type": "string"
+            },
+            "_version": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_version",
+              "type": "number"
+            },
+            "found": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/found",
+              "type": "boolean"
+            },
+            "_source": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_source",
+              "type": "object",
+              "properties": {
+                "user": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_source\/user",
+                  "type": "string"
+                },
+                "post_date": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_source\/post_date",
+                  "type": "string"
+                },
+                "message": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_source\/message",
+                  "type": "string"
+                }
+              }
+            },
+            "fields": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields",
+              "type": "object",
+              "properties": {
+                "message": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/message",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/message\/0",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "user": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/user",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/user\/0",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "post_date": {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/post_date",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/post_date\/0",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

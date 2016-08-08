@@ -68,7 +68,7 @@
                         <terminateAfter>{$ctx:terminateAfter}</terminateAfter>
                     </elasticsearch.searchByQuery>
                 </case>
-                <case regex="urn:searchDocumentByIndex">
+                <case regex="urn:searchDocumentsByIndex">
                     <elasticsearch.searchDocumentsByIndex>
                         <indexName>{$ctx:indexName}</indexName>
                         <from>{$ctx:from}</from>

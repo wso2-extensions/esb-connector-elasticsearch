@@ -45,7 +45,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
 
-        init("elasticsearch-connector-1.0.2-SNAPSHOT");
+        init("elasticsearch-connector-1.0.2");
 
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
@@ -138,16 +138,16 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
     }
 
     /**
-     * Positive test case for searchDocumentByIndex method with mandatory parameters.
+     * Positive test case for searchDocumentsByIndex method with mandatory parameters.
      *
      * @throws JSONException
      * @throws IOException
      */
     @Test(priority = 1, groups = {"wso2.esb"},
-            description = "elasticSearch {searchDocumentByIndex} integration test with mandatory parameters.")
+            description = "elasticSearch {searchDocumentsByIndex} integration test with mandatory parameters.")
     public void testSearchDocumentByIndexWithMandatoryParameters() throws IOException, JSONException {
 
-        esbRequestHeadersMap.put("Action", "urn:searchDocumentByIndex");
+        esbRequestHeadersMap.put("Action", "urn:searchDocumentsByIndex");
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap,
                 "esb_searchDocumentByIndex_mandatory.json");
@@ -166,16 +166,16 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
     }
 
     /**
-     * Positive test case for searchDocumentByIndex method with optional parameters.
+     * Positive test case for searchDocumentsByIndex method with optional parameters.
      *
      * @throws JSONException
      * @throws IOException
      */
     @Test(priority = 1, groups = {"wso2.esb"},
-            description = "elasticSearch {searchDocumentByIndex} integration test with optional parameters.")
+            description = "elasticSearch {searchDocumentsByIndex} integration test with optional parameters.")
     public void testSearchDocumentByIndexWithOptionalParameters() throws IOException, JSONException {
 
-        esbRequestHeadersMap.put("Action", "urn:searchDocumentByIndex");
+        esbRequestHeadersMap.put("Action", "urn:searchDocumentsByIndex");
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap,
                 "esb_searchDocumentByIndex_optional.json");
@@ -201,15 +201,15 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
     }
 
     /**
-     * Negative test case for searchDocumentByIndex method.
+     * Negative test case for searchDocumentsByIndex method.
      *
      * @throws JSONException
      * @throws IOException
      */
-    @Test(groups = {"wso2.esb"}, description = "elasticSearch {searchDocumentByIndex} integration test with negative case.")
+    @Test(groups = {"wso2.esb"}, description = "elasticSearch {searchDocumentsByIndex} integration test with negative case.")
     public void testSearchDocumentByIndexWithNegativeCase() throws IOException, JSONException {
 
-        esbRequestHeadersMap.put("Action", "urn:searchDocumentByIndex");
+        esbRequestHeadersMap.put("Action", "urn:searchDocumentsByIndex");
 
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap,
                 "esb_searchDocumentByIndex_negative.json");

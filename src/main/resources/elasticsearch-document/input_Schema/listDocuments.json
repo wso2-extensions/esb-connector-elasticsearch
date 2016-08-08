@@ -1,0 +1,92 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "indexName": {
+      "id": "http:\/\/wso2jsonschema.org\/indexName",
+      "type": "string"
+    },
+    "type": {
+      "id": "http:\/\/wso2jsonschema.org\/type",
+      "type": "string"
+    },
+    "fields": {
+      "id": "http:\/\/wso2jsonschema.org\/fields",
+      "type": "string"
+    },
+    "routing": {
+      "id": "http:\/\/wso2jsonschema.org\/routing",
+      "type": "string"
+    },
+    "sourceInclude": {
+      "id": "http:\/\/wso2jsonschema.org\/sourceInclude",
+      "type": "string"
+    },
+    "sourceExclude": {
+      "id": "http:\/\/wso2jsonschema.org\/sourceExclude",
+      "type": "string"
+    },
+    "realtime": {
+      "id": "http:\/\/wso2jsonschema.org\/realtime",
+      "type": "string"
+    },
+    "refresh": {
+      "id": "http:\/\/wso2jsonschema.org\/refresh",
+      "type": "string"
+    },
+    "source": {
+      "id": "http:\/\/wso2jsonschema.org\/source",
+      "type": "string"
+    },
+    "docs": {
+      "id": "http:\/\/wso2jsonschema.org\/docs",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/docs\/0",
+          "type": "object",
+          "properties": {
+            "_index": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_index",
+              "type": "string"
+            },
+            "_type": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_type",
+              "type": "string"
+            },
+            "_id": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_id",
+              "type": "string"
+            },
+            "_source": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/_source",
+              "type": "string"
+            },
+            "fields": {
+              "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields",
+              "type": "array",
+              "items": [
+                {
+                  "id": "http:\/\/wso2jsonschema.org\/docs\/0\/fields\/0",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ids": {
+      "id": "http:\/\/wso2jsonschema.org\/ids",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/ids\/0",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

@@ -22,6 +22,9 @@
         <dependency component="elasticsearch-document"/>
         <dependency component="elasticsearch-config"/>
         <description>WSO2 ESB Connector Library for Elasticsearch API.</description>
+        <authenticationInfo>
+            https://docs.wso2.com/display/ESBCONNECTORS/Configuring+Elasticsearch+Operations
+        </authenticationInfo>
     </component>
     <icon>icon/icon-small.gif</icon>
 </connector>
