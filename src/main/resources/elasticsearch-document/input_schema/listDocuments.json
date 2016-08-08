@@ -13,35 +13,43 @@
     },
     "fields": {
       "id": "http:\/\/wso2jsonschema.org\/fields",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "routing": {
       "id": "http:\/\/wso2jsonschema.org\/routing",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "sourceInclude": {
       "id": "http:\/\/wso2jsonschema.org\/sourceInclude",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "sourceExclude": {
       "id": "http:\/\/wso2jsonschema.org\/sourceExclude",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "realtime": {
       "id": "http:\/\/wso2jsonschema.org\/realtime",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "refresh": {
       "id": "http:\/\/wso2jsonschema.org\/refresh",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "source": {
       "id": "http:\/\/wso2jsonschema.org\/source",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "docs": {
       "id": "http:\/\/wso2jsonschema.org\/docs",
       "type": "array",
+      "nullable": "true",
       "items": [
         {
           "id": "http:\/\/wso2jsonschema.org\/docs\/0",
@@ -80,6 +88,7 @@
     "ids": {
       "id": "http:\/\/wso2jsonschema.org\/ids",
       "type": "array",
+      "nullable": "true",
       "items": [
         {
           "id": "http:\/\/wso2jsonschema.org\/ids\/0",

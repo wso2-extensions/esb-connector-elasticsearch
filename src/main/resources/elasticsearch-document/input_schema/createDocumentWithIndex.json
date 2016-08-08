@@ -17,47 +17,58 @@
     },
     "user": {
       "id": "http:\/\/wso2jsonschema.org\/user",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "postDate": {
       "id": "http:\/\/wso2jsonschema.org\/postDate",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "message": {
       "id": "http:\/\/wso2jsonschema.org\/message",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "version": {
       "id": "http:\/\/wso2jsonschema.org\/version",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "versionType": {
       "id": "http:\/\/wso2jsonschema.org\/versionType",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "operationType": {
       "id": "http:\/\/wso2jsonschema.org\/operationType",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "timeStamp": {
       "id": "http:\/\/wso2jsonschema.org\/timeStamp",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "timeToLive": {
       "id": "http:\/\/wso2jsonschema.org\/timeToLive",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "timeout": {
       "id": "http:\/\/wso2jsonschema.org\/timeout",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "consistency": {
       "id": "http:\/\/wso2jsonschema.org\/consistency",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "refresh": {
       "id": "http:\/\/wso2jsonschema.org\/refresh",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     }
   },
   "type": "object"

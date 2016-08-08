@@ -17,15 +17,18 @@
     },
     "parentId": {
       "id": "http:\/\/wso2jsonschema.org\/parentId",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "parentType": {
       "id": "http:\/\/wso2jsonschema.org\/parentType",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "tagValue": {
       "id": "http:\/\/wso2jsonschema.org\/tagValue",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     }
   },
   "type": "object"

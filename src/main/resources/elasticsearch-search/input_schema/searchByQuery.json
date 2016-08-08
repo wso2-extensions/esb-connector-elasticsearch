@@ -6,6 +6,7 @@
     "query": {
       "id": "http:\/\/wso2jsonschema.org\/query",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "term": {
           "id": "http:\/\/wso2jsonschema.org\/query\/term",
@@ -21,11 +22,13 @@
     },
     "explain": {
       "id": "http:\/\/wso2jsonschema.org\/explain",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "fields": {
       "id": "http:\/\/wso2jsonschema.org\/fields",
       "type": "array",
+      "nullable": "true",
       "items": [
         {
           "id": "http:\/\/wso2jsonschema.org\/fields\/0",
@@ -36,6 +39,7 @@
     "sort": {
       "id": "http:\/\/wso2jsonschema.org\/sort",
       "type": "array",
+      "nullable": "true",
       "items": [
         {
           "id": "http:\/\/wso2jsonschema.org\/sort\/0",
@@ -51,31 +55,38 @@
     },
     "timeout": {
       "id": "http:\/\/wso2jsonschema.org\/timeout",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "terminateAfter": {
       "id": "http:\/\/wso2jsonschema.org\/terminateAfter",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "from": {
       "id": "http:\/\/wso2jsonschema.org\/from",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "size": {
       "id": "http:\/\/wso2jsonschema.org\/size",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "searchType": {
       "id": "http:\/\/wso2jsonschema.org\/searchType",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "source": {
       "id": "http:\/\/wso2jsonschema.org\/source",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "scriptFields": {
       "id": "http:\/\/wso2jsonschema.org\/scriptFields",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "my_field": {
           "id": "http:\/\/wso2jsonschema.org\/scriptFields\/my_field",
@@ -102,6 +113,7 @@
     "fieldDataFields": {
       "id": "http:\/\/wso2jsonschema.org\/fieldDataFields",
       "type": "array",
+      "nullable": "true",
       "items": [
         {
           "id": "http:\/\/wso2jsonschema.org\/fieldDataFields\/0",
@@ -112,6 +124,7 @@
     "highlight": {
       "id": "http:\/\/wso2jsonschema.org\/highlight",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "fields": {
           "id": "http:\/\/wso2jsonschema.org\/highlight\/fields",
@@ -128,6 +141,7 @@
     "indicesBoost": {
       "id": "http:\/\/wso2jsonschema.org\/indicesBoost",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "index1": {
           "id": "http:\/\/wso2jsonschema.org\/indicesBoost\/index1",
@@ -141,27 +155,33 @@
     },
     "minScore": {
       "id": "http:\/\/wso2jsonschema.org\/minScore",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "trackScores": {
       "id": "http:\/\/wso2jsonschema.org\/trackScores",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "version": {
       "id": "http:\/\/wso2jsonschema.org\/version",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "scroll": {
       "id": "http:\/\/wso2jsonschema.org\/scroll",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "queryCache": {
       "id": "http:\/\/wso2jsonschema.org\/queryCache",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "partialFields": {
       "id": "http:\/\/wso2jsonschema.org\/partialFields",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "partial1": {
           "id": "http:\/\/wso2jsonschema.org\/partialFields\/partial1",
@@ -178,6 +198,7 @@
     "postFilter": {
       "id": "http:\/\/wso2jsonschema.org\/postFilter",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "term": {
           "id": "http:\/\/wso2jsonschema.org\/postFilter\/term",
@@ -194,6 +215,7 @@
     "aggregation": {
       "id": "http:\/\/wso2jsonschema.org\/aggregation",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "tag": {
           "id": "http:\/\/wso2jsonschema.org\/aggregation\/tag",
@@ -216,6 +238,7 @@
     "rescore": {
       "id": "http:\/\/wso2jsonschema.org\/rescore",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "window_size": {
           "id": "http:\/\/wso2jsonschema.org\/rescore\/window_size",
@@ -261,11 +284,13 @@
     },
     "preference": {
       "id": "http:\/\/wso2jsonschema.org\/preference",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "innerHits": {
       "id": "http:\/\/wso2jsonschema.org\/innerHits",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "comment": {
           "id": "http:\/\/wso2jsonschema.org\/innerHits\/comment",

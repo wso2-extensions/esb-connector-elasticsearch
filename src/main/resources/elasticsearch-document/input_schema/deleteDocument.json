@@ -17,27 +17,33 @@
     },
     "version": {
       "id": "http:\/\/wso2jsonschema.org\/version",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "routing": {
       "id": "http:\/\/wso2jsonschema.org\/routing",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "refresh": {
       "id": "http:\/\/wso2jsonschema.org\/refresh",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "parentId": {
       "id": "http:\/\/wso2jsonschema.org\/parentId",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "consistency": {
       "id": "http:\/\/wso2jsonschema.org\/consistency",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "timeout": {
       "id": "http:\/\/wso2jsonschema.org\/timeout",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     }
   },
   "type": "object"

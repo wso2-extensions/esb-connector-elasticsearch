@@ -6,6 +6,7 @@
     "settings": {
       "id": "http:\/\/wso2jsonschema.org\/settings",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "index": {
           "id": "http:\/\/wso2jsonschema.org\/settings\/index",

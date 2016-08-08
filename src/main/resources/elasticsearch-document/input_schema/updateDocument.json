@@ -17,11 +17,13 @@
     },
     "script": {
       "id": "http:\/\/wso2jsonschema.org\/script",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "params": {
       "id": "http:\/\/wso2jsonschema.org\/params",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "count": {
           "id": "http:\/\/wso2jsonschema.org\/params\/count",
@@ -31,47 +33,58 @@
     },
     "timeout": {
       "id": "http:\/\/wso2jsonschema.org\/timeout",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "consistency": {
       "id": "http:\/\/wso2jsonschema.org\/consistency",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "parentId": {
       "id": "http:\/\/wso2jsonschema.org\/parentId",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "routing": {
       "id": "http:\/\/wso2jsonschema.org\/routing",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "refresh": {
       "id": "http:\/\/wso2jsonschema.org\/refresh",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "fields": {
       "id": "http:\/\/wso2jsonschema.org\/fields",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "version": {
       "id": "http:\/\/wso2jsonschema.org\/version",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "versionType": {
       "id": "http:\/\/wso2jsonschema.org\/versionType",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "retryOnConflict": {
       "id": "http:\/\/wso2jsonschema.org\/retryOnConflict",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "detectNoop": {
       "id": "http:\/\/wso2jsonschema.org\/detectNoop",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "upsert": {
       "id": "http:\/\/wso2jsonschema.org\/upsert",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "counter": {
           "id": "http:\/\/wso2jsonschema.org\/upsert\/counter",
@@ -81,15 +94,18 @@
     },
     "scriptedUpsert": {
       "id": "http:\/\/wso2jsonschema.org\/scriptedUpsert",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "docAsUpsert": {
       "id": "http:\/\/wso2jsonschema.org\/docAsUpsert",
-      "type": "string"
+      "type": "string",
+      "nullable": "true"
     },
     "doc": {
       "id": "http:\/\/wso2jsonschema.org\/doc",
       "type": "object",
+      "nullable": "true",
       "properties": {
         "name": {
           "id": "http:\/\/wso2jsonschema.org\/doc\/name",
