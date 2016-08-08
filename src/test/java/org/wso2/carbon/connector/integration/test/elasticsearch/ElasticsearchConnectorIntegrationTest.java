@@ -45,7 +45,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
 
-        init("elasticsearch-connector-1.0.2");
+        init("elasticsearch-connector-1.0.3-SNAPSHOT");
 
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
