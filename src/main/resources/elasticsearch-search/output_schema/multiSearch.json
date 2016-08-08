@@ -1,0 +1,118 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "responses": {
+      "id": "http:\/\/wso2jsonschema.org\/responses",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/responses\/0",
+          "type": "object",
+          "properties": {
+            "took": {
+              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/took",
+              "type": "number"
+            },
+            "timed_out": {
+              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/timed_out",
+              "type": "boolean"
+            },
+            "_shards": {
+              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/_shards",
+              "type": "object",
+              "properties": {
+                "total": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/_shards\/total",
+                  "type": "number"
+                },
+                "successful": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/_shards\/successful",
+                  "type": "number"
+                },
+                "failed": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/_shards\/failed",
+                  "type": "number"
+                }
+              }
+            },
+            "hits": {
+              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits",
+              "type": "object",
+              "properties": {
+                "total": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/total",
+                  "type": "number"
+                },
+                "max_score": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/max_score",
+                  "type": "number"
+                },
+                "hits": {
+                  "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits",
+                  "type": "array",
+                  "items": [
+                    {
+                      "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0",
+                      "type": "object",
+                      "properties": {
+                        "_index": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_index",
+                          "type": "string"
+                        },
+                        "_type": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_type",
+                          "type": "string"
+                        },
+                        "_id": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_id",
+                          "type": "string"
+                        },
+                        "_score": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_score",
+                          "type": "number"
+                        },
+                        "_routing": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_routing",
+                          "type": "string"
+                        },
+                        "_source": {
+                          "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source",
+                          "type": "object",
+                          "properties": {
+                            "timeout": {
+                              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source\/timeout",
+                              "type": "string"
+                            },
+                            "refresh": {
+                              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source\/refresh",
+                              "type": "string"
+                            },
+                            "user": {
+                              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source\/user",
+                              "type": "string"
+                            },
+                            "post_date": {
+                              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source\/post_date",
+                              "type": "string"
+                            },
+                            "message": {
+                              "id": "http:\/\/wso2jsonschema.org\/responses\/0\/hits\/hits\/0\/_source\/message",
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "found": {
+      "id": "http:\/\/wso2jsonschema.org\/found",
+      "type": "boolean"
+    },
+    "_index": {
+      "id": "http:\/\/wso2jsonschema.org\/_index",
+      "type": "string"
+    },
+    "_type": {
+      "id": "http:\/\/wso2jsonschema.org\/_type",
+      "type": "string"
+    },
+    "_id": {
+      "id": "http:\/\/wso2jsonschema.org\/_id",
+      "type": "string"
+    },
+    "_version": {
+      "id": "http:\/\/wso2jsonschema.org\/_version",
+      "type": "number"
+    },
+    "_shards": {
+      "id": "http:\/\/wso2jsonschema.org\/_shards",
+      "type": "object",
+      "properties": {
+        "total": {
+          "id": "http:\/\/wso2jsonschema.org\/_shards\/total",
+          "type": "number"
+        },
+        "successful": {
+          "id": "http:\/\/wso2jsonschema.org\/_shards\/successful",
+          "type": "number"
+        },
+        "failed": {
+          "id": "http:\/\/wso2jsonschema.org\/_shards\/failed",
+          "type": "number"
+        }
+      }
+    }
+  },
+  "type": "object"
+}

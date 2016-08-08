@@ -1,0 +1,72 @@
+{
+  "id": "http:\/\/wso2jsonschema.org",
+  "title": "root",
+  "$schema": "http:\/\/wso2.org\/json-schema\/wso2-data-mapper-v5.0.0\/schema#",
+  "properties": {
+    "took": {
+      "id": "http:\/\/wso2jsonschema.org\/took",
+      "type": "number"
+    },
+    "errors": {
+      "id": "http:\/\/wso2jsonschema.org\/errors",
+      "type": "boolean"
+    },
+    "items": {
+      "id": "http:\/\/wso2jsonschema.org\/items",
+      "type": "array",
+      "items": [
+        {
+          "id": "http:\/\/wso2jsonschema.org\/items\/0",
+          "type": "object",
+          "properties": {
+            "create": {
+              "id": "http:\/\/wso2jsonschema.org\/items\/0\/create",
+              "type": "object",
+              "properties": {
+                "_index": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_index",
+                  "type": "string"
+                },
+                "_type": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_type",
+                  "type": "string"
+                },
+                "_id": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_id",
+                  "type": "string"
+                },
+                "_version": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_version",
+                  "type": "number"
+                },
+                "_shards": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_shards",
+                  "type": "object",
+                  "properties": {
+                    "total": {
+                      "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_shards\/total",
+                      "type": "number"
+                    },
+                    "successful": {
+                      "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_shards\/successful",
+                      "type": "number"
+                    },
+                    "failed": {
+                      "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/_shards\/failed",
+                      "type": "number"
+                    }
+                  }
+                },
+                "status": {
+                  "id": "http:\/\/wso2jsonschema.org\/items\/0\/create\/status",
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "type": "object"
+}
