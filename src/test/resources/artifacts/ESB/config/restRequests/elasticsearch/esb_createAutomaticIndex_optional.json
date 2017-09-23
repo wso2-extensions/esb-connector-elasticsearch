@@ -9,7 +9,8 @@
   "human": "true",
   "settings": {
     "index": {
-      "mapping.allow_type_wrapper":%s(indexMappingAllowType)
+      "number_of_shards" :"%s(indexNumberOfShards)" ,
+      "number_of_replicas" :"%s(indexNumberOfReplicas)"
     }
   }
 }

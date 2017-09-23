@@ -44,8 +44,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
      */
     @BeforeClass(alwaysRun = true)
     public void setEnvironment() throws Exception {
-
-        init("elasticsearch-connector-1.0.3-SNAPSHOT");
+        String connectorName = System.getProperty("connector_name") + "-connector-" +
+                System.getProperty("connector_version") + ".zip";
+        init(connectorName);
 
         esbRequestHeadersMap.put("Accept-Charset", "UTF-8");
         esbRequestHeadersMap.put("Content-Type", "application/json");
@@ -648,8 +649,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
         final String id =
-                esbRestResponse.getBody().getJSONArray("items").getJSONObject(0).getJSONObject("create").getString("_id");
-
+                esbRestResponse.getBody().getJSONArray("items").getJSONObject(0).getJSONObject("index").getString("_id");
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("items").getJSONObject(0).getJSONObject("index").getInt("status"),201);
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("items").getJSONObject(1).getJSONObject("delete").getInt("status"),404);
         String apiEndPoint =
                 apiUrl + "/" + connectorProperties.getProperty("indexName") + "/" + connectorProperties.getProperty("type")
                         + "/" + id;
@@ -657,10 +659,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         Assert.assertEquals(apiRestResponse.getBody().getString("_index"), connectorProperties.getProperty("indexName"));
         Assert.assertEquals(apiRestResponse.getBody().getString("_type"), connectorProperties.getProperty("type"));
-        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("value1"),
-                connectorProperties.getProperty("bulkOperationValue1"));
-        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("value2"),
-                connectorProperties.getProperty("bulkOperationValue2"));
+        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("post_date"),
+                connectorProperties.getProperty("postDate"));
+
     }
 
     /**
@@ -806,11 +807,10 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(apiRestResponse.getBody().has(indexName), true);
 
-        final JSONObject mappingObject = apiRestResponse.getBody().getJSONObject(indexName).getJSONObject("settings").
-                getJSONObject("index").getJSONObject("mapping");
-        final String indexMappingAllowType = mappingObject.getString("allow_type_wrapper");
+        final String indexObject = apiRestResponse.getBody().getJSONObject(indexName).getJSONObject("settings").
+                getJSONObject("index").getString("number_of_shards");
 
-        Assert.assertEquals(indexMappingAllowType, connectorProperties.getProperty("indexMappingAllowType"));
+        Assert.assertEquals(indexObject, connectorProperties.getProperty("indexNumberOfShards"));
     }
 
     /**
@@ -828,7 +828,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 "esb_createAutomaticIndex_negative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         String apiEndPoint = apiUrl + "/INVALIDINDEX";
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "PUT", apiRequestHeadersMap);
 
         Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
         Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
@@ -1215,12 +1215,12 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
 
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getJSONObject("fields")
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getJSONObject("_source")
                 .getString("user"), apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).
-                getJSONObject("fields").getString("user"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getJSONObject("fields")
+                getJSONObject("_source").getString("user"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getJSONObject("_source")
                 .getString("post_date"), apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).
-                getJSONObject("fields").getString("post_date"));
+                getJSONObject("_source").getString("post_date"));
     }
 
     /**
