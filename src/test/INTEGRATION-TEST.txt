@@ -10,15 +10,15 @@ Pre-requisites:
 Tested Platform: 
 
  - Microsoft WINDOWS V-7
- - UBUNTU 13.04, 14.04
- - WSO2 ESB 4.9.0, 5.0.0-BETA
- - Java 1.7
+ - UBUNTU 16.04
+ - WSO2 EI6.1.1
+ - Java 1.8
 
 Steps to follow in setting integration test.
 
- 1. Download ESB 5.0.0-BETA and add "-XX:-UseSplitVerifier" under $JVM_MEM_OPTS into {ESB_HOME}/bin/wso2server.sh".
+ 1. Download ESB EI6.1.1.
  
- 2. Navigate to location "<ESB_HOME>/repository/conf/axis2" and add/uncomment following lines in "axis2.xml".
+ 2. Navigate to location "<EI_HOME>/conf/axis2" and add/uncomment following lines in "axis2.xml".
  
         <messageFormatter contentType="application/yaml" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
         <messageBuilder contentType="application/yaml" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
@@ -26,13 +26,12 @@ Steps to follow in setting integration test.
         <messageFormatter contentType="application/javascript" class="org.apache.synapse.commons.json.JsonStreamFormatter"/>
         <messageBuilder contentType="application/javascript" class="org.apache.synapse.commons.json.JsonStreamBuilder"/>
 
- 3. Follow the steps in below mentioned URL to download and setup an instance of the latest version of Elasticsearch.
+ 3. Follow the steps in below mentioned URL to download ,setup and run the instance of the latest version of Elasticsearch .
       https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
 
  4. Prerequisites for Elasticsearch Connector Integration Testing.
       i) Make sure to enable ElasticSearch dynamic Groovy scripts by modifying the file "<ELASTICSEARCH_INSTANCE_HOME>/config/elasticsearch.yml" and add the following setting to that file.
-            
-            script.groovy.sandbox.enabled: true
+
             script.engine.groovy.inline.search: on
             script.engine.groovy.inline.update: on
             script.engine.groovy.inline.aggs: on
@@ -42,7 +41,7 @@ Steps to follow in setting integration test.
       ii) Create an index using a method call to Elasticsearch API using the following URL.
             PUT 'http://{IP_ADDRESS_OF_THE_MACHINE}:{PORT_NUMBER}/{INDEX_NAME}/'
  
- 5. Compress modified ESB as wso2esb-5.0.0-BETA.zip and copy that zip file in to location "<ESB_CONNECTOR_HOME>/repository/".
+ 5. Compress modified EI as wso2EI-6.1.1.zip and copy that zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
  
  6. Update the Elasticsearch properties file at location "<ELASTICSEARCH_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
 

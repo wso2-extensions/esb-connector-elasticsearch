@@ -118,7 +118,6 @@
                         <message>{$ctx:message}</message>
                         <timeout>{$ctx:timeout}</timeout>
                         <refresh>{$ctx:refresh}</refresh>
-                        <consistency>{$ctx:consistency}</consistency>
                         <user>{$ctx:user}</user>
                         <postDate>{$ctx:postDate}</postDate>
                     </elasticsearch.routeDocument>

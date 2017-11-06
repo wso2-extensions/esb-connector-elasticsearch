@@ -2,17 +2,13 @@
   "docs": [
     {
       "_index": "%s(indexName)",
-      "fields": [
-        "user",
-        "post_date"
-      ],
       "_id": "%s(documentIdMandatory)"
     },
     {
       "_index": "%s(indexName)",
-      "fields": [
-        "user",
-        "post_date"
+      "_source": [
+        "post_date",
+        "user"
       ],
       "_id": "%s(documentIdOptional)"
     }

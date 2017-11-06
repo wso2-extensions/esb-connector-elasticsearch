@@ -1,3 +1,4 @@
-{"create": {"_index": "%s(indexName)", "_type": "%s(type)"}}
-{ "value1": "%s(bulkOperationValue1)", "value2": "%s(bulkOperationValue2)"}
 {"index" :{"_index": "%s(indexName)", "_type": "%s(type)"}}
+{"post_date":"%s(postDate)"}
+{"delete": {"_index": "%s(indexName)", "_type": "%s(type)","_id": "invalid"}}
+{"create" :{"_index": "%s(indexName)", "_type": "%s(type)","_id": "1234"}}
