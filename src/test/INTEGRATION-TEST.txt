@@ -11,12 +11,13 @@ Tested Platform:
 
  - Microsoft WINDOWS V-7
  - UBUNTU 16.04
- - WSO2 EI6.1.1
+ - WSO2 EI6.2.0
  - Java 1.8
+ - elastic search  5.6.3
 
 Steps to follow in setting integration test.
 
- 1. Download ESB EI6.1.1.
+ 1. Download ESB EI6.2.0.
  
  2. Navigate to location "<EI_HOME>/conf/axis2" and add/uncomment following lines in "axis2.xml".
  
@@ -41,7 +42,7 @@ Steps to follow in setting integration test.
       ii) Create an index using a method call to Elasticsearch API using the following URL.
             PUT 'http://{IP_ADDRESS_OF_THE_MACHINE}:{PORT_NUMBER}/{INDEX_NAME}/'
  
- 5. Compress modified EI as wso2EI-6.1.1.zip and copy that zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
+ 5. Compress modified EI as wso2EI-6.2.0.zip and copy that zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
  
  6. Update the Elasticsearch properties file at location "<ELASTICSEARCH_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
 
@@ -78,4 +79,4 @@ Steps to follow in setting integration test.
    NOTE: The property values of 'indexNameMand' and 'indexNameOpt' should be changed to unique different values for each integration execution.  
 
  9. Navigate to "<ELASTICSEARCH_CONNECTOR_HOME>/" and run the following command.
-     $ mvn clean install
+     $ mvn clean install -Dskip-tests=false
