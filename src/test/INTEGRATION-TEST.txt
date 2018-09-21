@@ -11,21 +11,15 @@ Tested Platform:
 
  - Microsoft WINDOWS V-7
  - UBUNTU 16.04
- - WSO2 EI6.2.0
+ - WSO2 EI 6.4.0
  - Java 1.8
- - elastic search  5.6.3
+ - elastic search  5.6.3, 5.6.4
 
 Steps to follow in setting integration test.
 
- 1. Download ESB EI6.2.0.
+ 1. Download ESB EI 6.4.0.
  
- 2. Navigate to location "<EI_HOME>/conf/axis2" and add/uncomment following lines in "axis2.xml".
- 
-        <messageFormatter contentType="application/yaml" class="org.wso2.carbon.relay.ExpandingMessageFormatter"/>
-        <messageBuilder contentType="application/yaml" class="org.wso2.carbon.relay.BinaryRelayBuilder"/>
-
-        <messageFormatter contentType="application/javascript" class="org.apache.synapse.commons.json.JsonStreamFormatter"/>
-        <messageBuilder contentType="application/javascript" class="org.apache.synapse.commons.json.JsonStreamBuilder"/>
+ 2. Place wso2ei-6.4.0.zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
 
  3. Follow the steps in below mentioned URL to download ,setup and run the instance of the latest version of Elasticsearch .
       https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
@@ -41,10 +35,8 @@ Steps to follow in setting integration test.
             
       ii) Create an index using a method call to Elasticsearch API using the following URL.
             PUT 'http://{IP_ADDRESS_OF_THE_MACHINE}:{PORT_NUMBER}/{INDEX_NAME}/'
- 
- 5. Compress modified EI as wso2EI-6.2.0.zip and copy that zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
- 
- 6. Update the Elasticsearch properties file at location "<ELASTICSEARCH_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
+
+ 5. Update the Elasticsearch properties file at location "<ELASTICSEARCH_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
 
    i)     apiUrl                       -  The API URL should be in the following format http://{IP_ADDRESS_OF_THE_MACHINE}:{PORT_NUMBER}
                                           (The IP address should be IP address of the machine in which the Elasticsearch instance is running.)
@@ -76,7 +68,6 @@ Steps to follow in setting integration test.
    xxvii) indexChildDocumentTypeOpt    -  A string value to assign as child type for index child document optional case.
    xxviii)indexChildDocumentChildId    -  An integer value to set as child ID for index child document (e.g.: 2).
    
-   NOTE: The property values of 'indexNameMand' and 'indexNameOpt' should be changed to unique different values for each integration execution.  
 
- 9. Navigate to "<ELASTICSEARCH_CONNECTOR_HOME>/" and run the following command.
+ 6. Navigate to "<ELASTICSEARCH_CONNECTOR_HOME>/" and run the following command.
      $ mvn clean install -Dskip-tests=false
