@@ -54,6 +54,20 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         apiUrl = connectorProperties.getProperty("apiUrl");
         currentTimeString = System.currentTimeMillis();
+
+        String indexName = currentTimeString + connectorProperties.getProperty("indexName");
+        String indexNameMandatory = currentTimeString + connectorProperties.getProperty("indexNameMand");
+        String indexNameOptional = currentTimeString + connectorProperties.getProperty("indexNameOpt");
+        connectorProperties.setProperty("indexName", indexName);
+        connectorProperties.setProperty("indexNameMand", indexNameMandatory);
+        connectorProperties.setProperty("indexNameOpt", indexNameOptional);
+        // Create Index in Elasticsearch
+        String apiEndPoint_1 = apiUrl + "/" + indexName;
+        String apiEndPoint_2 = apiUrl + "/" + indexName;
+        String apiEndPoint_3 = apiUrl + "/" + indexName;
+        sendJsonRestRequest(apiEndPoint_1, "PUT", apiRequestHeadersMap);
+        sendJsonRestRequest(apiEndPoint_2, "PUT", apiRequestHeadersMap);
+        sendJsonRestRequest(apiEndPoint_3, "PUT", apiRequestHeadersMap);
     }
 
     /**
