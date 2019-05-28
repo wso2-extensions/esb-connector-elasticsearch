@@ -93,8 +93,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
                 .getString("_id"), apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
                 .getString("_id"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("timed_out"),
-                apiRestResponse.getBody().getString("timed_out"));
+        Assert.assertEquals(esbRestResponse.getBody().getBoolean("timed_out"),
+                apiRestResponse.getBody().getBoolean("timed_out"));
     }
 
     /**
@@ -120,15 +120,15 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap,
                 "api_searchByQuery_optional.json");
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").length(), 1);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getString("max_score"), apiRestResponse
-                .getBody().getJSONObject("hits").getString("max_score"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getDouble("max_score"), apiRestResponse
+                .getBody().getJSONObject("hits").getDouble("max_score"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
-                        .getString("_version"),
-                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getString("_version"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("timed_out"),
-                apiRestResponse.getBody().getString("timed_out"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getString("total"), apiRestResponse.getBody()
-                .getJSONObject("hits").getString("total"));
+                        .getInt("_version"),
+                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getInt("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getBoolean("timed_out"),
+                apiRestResponse.getBody().getBoolean("timed_out"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getInt("total"), apiRestResponse.getBody()
+                .getJSONObject("hits").getInt("total"));
     }
 
     /**
@@ -148,8 +148,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         String apiEndPoint = apiUrl + "/_search?terminate_after=INVALID";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -206,13 +207,13 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
                 .getString("_index"), connectorProperties.getProperty("indexName"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").length(), 1);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getString("max_score"), apiRestResponse
-                .getBody().getJSONObject("hits").getString("max_score"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getDouble("max_score"), apiRestResponse
+                .getBody().getJSONObject("hits").getDouble("max_score"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
-                        .getString("_version"),
-                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getString("_version"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("timed_out"),
-                apiRestResponse.getBody().getString("timed_out"));
+                        .getInt("_version"),
+                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getInt("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getBoolean("timed_out"),
+                apiRestResponse.getBody().getBoolean("timed_out"));
     }
 
     /**
@@ -233,8 +234,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 + "/_search?terminate_after=INVALID";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -295,13 +297,13 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
                 .getString("_index"), connectorProperties.getProperty("indexName"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").length(), 1);
-        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getString("max_score"), apiRestResponse
-                .getBody().getJSONObject("hits").getString("max_score"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getDouble("max_score"), apiRestResponse
+                .getBody().getJSONObject("hits").getDouble("max_score"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0)
-                        .getString("_version"),
-                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getString("_version"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("timed_out"),
-                apiRestResponse.getBody().getString("timed_out"));
+                        .getInt("_version"),
+                apiRestResponse.getBody().getJSONObject("hits").getJSONArray("hits").getJSONObject(0).getInt("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getBoolean("timed_out"),
+                apiRestResponse.getBody().getBoolean("timed_out"));
     }
 
     /**
@@ -322,8 +324,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 + connectorProperties.getProperty("type") + "/_search?terminate_after=INVALID";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -396,8 +399,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
-        Assert.assertEquals(esbRestResponse.getBody().getString("found"), "false");
-        Assert.assertEquals(apiRestResponse.getBody().getString("found"), esbRestResponse.getBody().getString("found"));
+        Assert.assertEquals(esbRestResponse.getBody().getBoolean("found"), false);
+        Assert.assertEquals(apiRestResponse.getBody().getBoolean("found"),
+                esbRestResponse.getBody().getBoolean("found"));
     }
 
     /**
@@ -420,10 +424,10 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                         + "/" + connectorProperties.getProperty("documentIdMandatory");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
 
-        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("age"),
+        Assert.assertEquals(String.valueOf(apiRestResponse.getBody().getJSONObject("_source").getInt("age")),
                 connectorProperties.getProperty("updateDocValueMandatory"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -446,10 +450,10 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                         + "/" + connectorProperties.getProperty("documentIdOptional");
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
 
-        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("age"),
+        Assert.assertEquals(String.valueOf(apiRestResponse.getBody().getJSONObject("_source").getInt("age")),
                 connectorProperties.getProperty("updateDocValueOptional"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -474,7 +478,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 404);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
-        Assert.assertEquals(apiRestResponse.getBody().getString("error"), esbRestResponse.getBody().getString("error"));
+        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("error").toString(),
+                esbRestResponse.getBody().getJSONObject("error").toString());
     }
 
     /**
@@ -500,8 +505,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(connectorProperties.getProperty("routingMessageMandatory"), apiRestResponse.getBody()
                 .getJSONObject("_source").getString("message"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -531,8 +536,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 .getString("user"));
         Assert.assertEquals(connectorProperties.getProperty("postDate"),
                 apiRestResponse.getBody().getJSONObject("_source").getString("post_date"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -555,7 +560,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_routeDocument_negative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
-        Assert.assertEquals(apiRestResponse.getBody().getString("error"), esbRestResponse.getBody().getString("error"));
+        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("error").toString(),
+                esbRestResponse.getBody().getJSONObject("error").toString());
     }
 
     /**
@@ -582,8 +588,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(connectorProperties.getProperty("messageMandatory"), apiRestResponse.getBody()
                 .getJSONObject("_source").getString("message"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -613,8 +619,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 .getString("user"));
         Assert.assertEquals(connectorProperties.getProperty("postDate"),
                 apiRestResponse.getBody().getJSONObject("_source").getString("post_date"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
     }
 
     /**
@@ -636,7 +642,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_createAutomaticId_negative.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
-        Assert.assertEquals(apiRestResponse.getBody().getString("error"), esbRestResponse.getBody().getString("error"));
+        Assert.assertEquals(apiRestResponse.getBody().getJSONObject("error").toString(),
+                esbRestResponse.getBody().getJSONObject("error").toString());
     }
 
     /**
@@ -703,8 +710,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 sendJsonRestRequest(apiEndPoint, "POST", bulkOperationsRequestHeadersMap,
                         "api_bulkOperations_negative.json");
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
     }
 
@@ -739,9 +747,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 apiRestResponse.getBody().getJSONArray("responses").getJSONObject(0).getJSONObject("_shards");
         JSONObject apiHits = apiRestResponse.getBody().getJSONArray("responses").getJSONObject(0).getJSONObject("hits");
 
-        Assert.assertEquals(esbShards.getString("total"), apiShards.getString("total"));
-        Assert.assertEquals(esbShards.getString("successful"), apiShards.getString("successful"));
-        Assert.assertEquals(esbHits.getString("total"), apiHits.getString("total"));
+        Assert.assertEquals(esbShards.getInt("total"), apiShards.getInt("total"));
+        Assert.assertEquals(esbShards.getInt("successful"), apiShards.getInt("successful"));
+        Assert.assertEquals(esbHits.getInt("total"), apiHits.getInt("total"));
         Assert.assertEquals(esbHits.getJSONArray("hits").getJSONObject(0).getString("_id"), apiHits.getJSONArray("hits")
                 .getJSONObject(0).getString("_id"));
     }
@@ -770,7 +778,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> apiRestResponse =
                 sendJsonRestRequest(apiEndPoint, "POST", bulkOperationsRequestHeadersMap, "api_multiSearch_negative.json");
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), apiRestResponse.getHttpStatusCode());
     }
 
@@ -790,7 +798,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> esbRestResponse = sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap,
                                                                        "esb_createAutomaticIndex_mandatory.json");
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        final String isIndexAcknowledged = esbRestResponse.getBody().getString("acknowledged");
+        final String isIndexAcknowledged = String.valueOf(esbRestResponse.getBody().getBoolean("acknowledged"));
         Assert.assertEquals(isIndexAcknowledged, "true");
 
         String apiEndPoint = apiUrl + "/" + indexName;
@@ -844,8 +852,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         String apiEndPoint = apiUrl + "/INVALIDINDEX";
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "PUT", apiRequestHeadersMap);
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -873,7 +882,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
 
-        Assert.assertEquals(apiRestResponse.getBody().getString("found"), "true");
+        Assert.assertEquals(apiRestResponse.getBody().getBoolean("found"), true);
         Assert.assertEquals(apiRestResponse.getBody().getString("_index"), indexName);
         Assert.assertEquals(apiRestResponse.getBody().getString("_type"), type);
         Assert.assertEquals(esbRestResponse.getBody().getString("_id"), childId);
@@ -905,7 +914,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
 
-        Assert.assertEquals(apiRestResponse.getBody().getString("found"), "true");
+        Assert.assertEquals(apiRestResponse.getBody().getBoolean("found"), true);
         Assert.assertEquals(apiRestResponse.getBody().getJSONObject("_source").getString("tag"), tagValue);
     }
 
@@ -940,8 +949,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
             apiEndPoint = apiUrl + "/" + indexName + "/" + type + "/" + childId + "?parent=";
             apiRestResponse = sendJsonRestRequest(apiEndPoint, "PUT", apiRequestHeadersMap, "api_indexChildDocument_negative.json");
             Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
-            Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-            Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+            Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                    apiRestResponse.getBody().getJSONObject("error").toString());
+            Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
         } else {
             Assert.fail("Mapping index child type with parent type failed.");
         }
@@ -1009,7 +1019,7 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         String esbIndexName = esbResponseJsonObject.getString("_index");
         String esbIndexType = esbResponseJsonObject.getString("_type");
         String esbDocumentId = esbResponseJsonObject.getString("_id");
-        String esbVersion = esbResponseJsonObject.getString("_version");
+        String esbVersion = String.valueOf(esbResponseJsonObject.getInt("_version"));
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 201);
 
@@ -1059,8 +1069,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         RestResponse<JSONObject> apiRestResponse =
                 sendJsonRestRequest(apiEndPoint, "PUT", apiRequestHeadersMap, "api_createDocumentWithIndex_negative.json");
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -1131,8 +1142,8 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
         Assert.assertEquals(esbRestResponse.getBody().getString("_index"), apiRestResponse.getBody().getString("_index"));
         Assert.assertEquals(esbRestResponse.getBody().getString("_type"), apiRestResponse.getBody().getString("_type"));
         Assert.assertEquals(esbRestResponse.getBody().getString("_id"), apiRestResponse.getBody().getString("_id"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("_version"),
-                apiRestResponse.getBody().getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getInt("_version"),
+                apiRestResponse.getBody().getInt("_version"));
         Assert.assertEquals(esbResponseSource.getString("message"), apiResponseSource.getString("message"));
         Assert.assertEquals(esbResponseSource.getString("user"), apiResponseSource.getString("user"));
     }
@@ -1158,8 +1169,10 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
 
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "GET", apiRequestHeadersMap);
 
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody().getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"),
+                apiRestResponse.getBody().getInt("status"));
     }
 
     /**
@@ -1191,19 +1204,15 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 apiRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_index"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_type"),
                 apiRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_type"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_source"),
-                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_source"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_version"),
-                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getInt("_version"),
+                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(0).getInt("_version"));
 
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_index"),
                 apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_index"));
         Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_type"),
                 apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_type"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_source"),
-                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_source"));
-        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_version"),
-                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getString("_version"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getInt("_version"),
+                apiRestResponse.getBody().getJSONArray("docs").getJSONObject(1).getInt("_version"));
     }
 
     /**
@@ -1257,8 +1266,9 @@ public class ElasticsearchConnectorIntegrationTest extends ConnectorIntegrationT
                 sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_listDocuments_negative.json");
 
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
-        Assert.assertEquals(esbRestResponse.getBody().getString("error"), apiRestResponse.getBody().getString("error"));
-        Assert.assertEquals(esbRestResponse.getBody().getString("status"), apiRestResponse.getBody()
-                .getString("status"));
+        Assert.assertEquals(esbRestResponse.getBody().getJSONObject("error").toString(),
+                apiRestResponse.getBody().getJSONObject("error").toString());
+        Assert.assertEquals(esbRestResponse.getBody().getInt("status"), apiRestResponse.getBody()
+                .getInt("status"));
     }
 }
