@@ -11,15 +11,15 @@
 
  - Microsoft WINDOWS V-7
  - UBUNTU 16.04
- - WSO2 EI 6.4.0
+ - WSO2 EI 6.5.0
  - Java 1.8
  - elastic search  5.6.3, 5.6.4
 
 Steps to follow in setting integration test.
 
- 1. Download ESB EI 6.4.0.
+ 1. Download ESB EI 6.5.0.
  
- 2. Place wso2ei-6.4.0.zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
+ 2. Place wso2ei-6.5.0.zip file in to location "<ELASTICSEARCH_CONNECTOR_HOME>/repository/".
 
  3. Follow the steps in below mentioned URL to download ,setup and run the instance of the latest version of Elasticsearch .
       https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
