@@ -4,7 +4,7 @@
     "category": "Storage and Content Management",
     "documentationUrl": "https://github.com/wso2-extensions/esb-connector-elasticsearch/blob/1.0.3/README.md",
     "description": "The Elasticsearch connector allows you to access the Elasticsearch REST API through WSO2 ESB. Elasticsearch is a distributed, open source search and analytics engine, designed for horizontal scalability, reliability, and easy management. The Elasticsearch REST APIs are exposed using JSON over HTTP.",
-    "status": "Active",
+    "status": "Inactive",
     "labels": [
         "search",
         "analytics"
